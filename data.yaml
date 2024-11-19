@@ -1,0 +1,8 @@
+# Pathler ve Veri Seti Bilgileri
+path: /YoloV8/openimagesV7/human_dataset # dataset root dir
+train: images/train
+val: images/val
+# Classes
+names:
+  0: human
+
