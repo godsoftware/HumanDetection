@@ -1,10 +1,5 @@
 # HumanDetection - İnsan Algılama ve Takip Sistemi
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![YOLO](https://img.shields.io/badge/YOLO-v8-orange.svg)](https://github.com/ultralytics/ultralytics)
-[![OpenCV](https://img.shields.io/badge/OpenCV-4.8+-green.svg)](https://opencv.org/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
 ## 📋 Proje Hakkında
 
 HumanDetection, YOLOv8 ve OpenCV kullanarak gerçek zamanlı insan algılama, sayma ve takip yapabilen kapsamlı bir bilgisayarlı görü projesidir. Bu proje, güvenlik sistemleri, insan sayımı, trafik analizi ve benzeri uygulamalar için geliştirilmiştir.
@@ -45,7 +40,7 @@ venv\Scripts\activate  # Windows
 ### Adım 3: Gerekli Paketleri Yükleyin
 
 ```bash
-pip install -r requirements.txt
+pip install ultralytics opencv-python numpy cvzone pypylon torch torchvision
 ```
 
 ### Adım 4: YOLOv8 Modelini İndirin
@@ -176,29 +171,25 @@ conf_threshold = 0.5    # Orta eşik - dengeli tespit
 conf_threshold = 0.8    # Yüksek eşik - yüksek güvenilirlik
 ```
 
-## 🔧 Gereksinimler
+## 🔧 Teknik Detaylar
 
 ### Ana Paketler
 
 ```
-ultralytics>=8.0.0
-opencv-python>=4.8.0
-numpy>=1.21.0
-cvzone>=1.5.6
-pypylon>=2.0.0
+ultralytics>=8.0.0      # YOLOv8 modeli
+opencv-python>=4.8.0   # Görüntü işleme
+numpy>=1.21.0          # Sayısal işlemler
+cvzone>=1.5.6          # Görsel arayüz
+pypylon>=2.0.0         # Basler kamera
+torch>=1.9.0           # PyTorch
+torchvision>=0.10.0    # TorchVision
 ```
 
-### Ek Paketler
+### Sistem Gereksinimleri
 
-```
-torch>=1.9.0
-torchvision>=0.10.0
-pillow>=8.0.0
-matplotlib>=3.3.0
-seaborn>=0.11.0
-```
-
-## 📊 Performans
+- **Minimum**: CPU i5, 8GB RAM
+- **Önerilen**: GPU RTX 3060+, 16GB RAM
+- **Optimal**: GPU RTX 4080+, 32GB RAM
 
 ### Model Performansı
 
@@ -206,12 +197,6 @@ seaborn>=0.11.0
 - **YOLOv8s**: Dengeli hız ve doğruluk
 - **YOLOv8m**: Yüksek doğruluk, orta hız
 - **YOLOv8l**: Çok yüksek doğruluk, düşük hız
-
-### Sistem Gereksinimleri
-
-- **Minimum**: CPU i5, 8GB RAM
-- **Önerilen**: GPU RTX 3060+, 16GB RAM
-- **Optimal**: GPU RTX 4080+, 32GB RAM
 
 ## 🐛 Sorun Giderme
 
@@ -256,53 +241,3 @@ seaborn>=0.11.0
 2. `train4.py` parametrelerini ayarlayın
 3. Eğitimi başlatın
 4. Sonuçları değerlendirin
-
-## 🤝 Katkıda Bulunma
-
-1. Fork yapın
-2. Feature branch oluşturun (`git checkout -b feature/AmazingFeature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Add some AmazingFeature'`)
-4. Branch'inizi push edin (`git push origin feature/AmazingFeature`)
-5. Pull Request oluşturun
-
-## 📝 Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için `LICENSE` dosyasına bakın.
-
-## 👨‍💻 Geliştirici
-
-**Özkan KAL** - [GitHub](https://github.com/ozkal)
-
-## 🙏 Teşekkürler
-
-- [Ultralytics](https://github.com/ultralytics/ultralytics) - YOLOv8
-- [OpenCV](https://opencv.org/) - Bilgisayarlı görü
-- [SORT](https://github.com/abewley/sort) - Takip algoritması
-- [Basler](https://www.baslerweb.com/) - Kamera desteği
-
-## 📞 İletişim
-
-- **Email**: [email protected]
-- **GitHub**: [@ozkal](https://github.com/ozkal)
-- **Proje Linki**: [HumanDetection](https://github.com/ozkal/HumanDetection)
-
-## 🔄 Güncellemeler
-
-### v1.0.0 (2024-09-04)
-- İlk sürüm
-- Temel insan algılama
-- Webcam desteği
-
-### v1.1.0 (2024-08-27)
-- Basler kamera desteği
-- IP kamera entegrasyonu
-- Koordinat kaydetme
-
-### v1.2.0 (2024-08-21)
-- Model eğitimi
-- SORT takip algoritması
-- Alan bazlı sayım
-
----
-
-⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!
